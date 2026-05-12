@@ -1,6 +1,4 @@
-ها هو README كامل جاهز، غير كوپييه وحطّو فـ ملف `README.md`:
 
-````md
 # Reservation Management System
 
 A modern PHP-based reservation management system with integrated Stripe payment processing.  
