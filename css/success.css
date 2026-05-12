@@ -1,0 +1,115 @@
+/* ========================================
+   booking-success.css — matches Events dark theme
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg:         #0e0e0e;
+    --surface:    #1a1a1a;
+    --surface-2:  #222222;
+    --border:     #2e2e2e;
+    --accent:     #7c4dff;
+    --accent-hover: #9c6fff;
+    --accent-glow: rgba(124, 77, 255, 0.35);
+    --text:       #f0f0f0;
+    --text-muted: #888888;
+    --success:    #4caf7d;
+    --radius:     14px;
+    --font:       'Sora', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 15px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Page layout ── */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 3rem 1.5rem;
+}
+
+/* ── Card ── */
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 3rem 2.5rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.45);
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.25rem;
+    display: block;
+    animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes pop {
+    from { transform: scale(0.5); opacity: 0; }
+    to   { transform: scale(1);   opacity: 1; }
+}
+
+.card h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--success);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.3px;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+.btn-back {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--font);
+    font-size: 0.93rem;
+    font-weight: 600;
+    padding: 0.7rem 1.75rem;
+    border-radius: 9px;
+    text-decoration: none;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+
+.btn-back:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 4px 18px var(--accent-glow);
+}
+
+.btn-back:active {
+    transform: scale(0.97);
+}
+
+/* ── Light mode ── */
+body.light {
+    --bg:        #f4f4f8;
+    --surface:   #ffffff;
+    --surface-2: #efefef;
+    --border:    #dcdcdc;
+    --text:      #1a1a1a;
+    --text-muted:#666666;
+}

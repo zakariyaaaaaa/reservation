@@ -1,0 +1,223 @@
+/* ========================================
+   edit-profil.css — matches Events dark theme
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg:         #0e0e0e;
+    --surface:    #1a1a1a;
+    --surface-2:  #222222;
+    --border:     #2e2e2e;
+    --accent:     #7c4dff;
+    --accent-hover: #9c6fff;
+    --accent-glow: rgba(124, 77, 255, 0.35);
+    --text:       #f0f0f0;
+    --text-muted: #888888;
+    --success:    #4caf7d;
+    --error:      #e05c5c;
+    --radius:     14px;
+    --font:       'Sora', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 15px;
+    min-height: 100vh;
+}
+
+/* ── Navbar ── */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 58px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.3px;
+}
+
+.navbar .right {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+}
+
+.navbar .right a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.navbar .right a:hover {
+    color: var(--accent-hover);
+}
+
+.theme-toggle {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 0.85rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.theme-toggle:hover {
+    background: var(--border);
+}
+
+/* ── Page layout ── */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3.5rem 1.5rem;
+    min-height: calc(100vh - 58px);
+}
+
+/* ── Card ── */
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2.5rem 2.25rem;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.45);
+}
+
+.card-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1.75rem;
+    letter-spacing: -0.4px;
+}
+
+/* ── Form ── */
+form label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 0.45rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    margin-bottom: 1.25rem;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+form button[type="submit"] {
+    width: 100%;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--font);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    margin-top: 0.25rem;
+}
+
+form button[type="submit"]:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 4px 18px var(--accent-glow);
+}
+
+form button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* ── Alerts ── */
+.alert {
+    border-radius: 9px;
+    padding: 0.7rem 1rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.alert-success {
+    background: rgba(76, 175, 125, 0.12);
+    border: 1px solid rgba(76, 175, 125, 0.3);
+    color: var(--success);
+}
+
+.alert-error {
+    background: rgba(224, 92, 92, 0.12);
+    border: 1px solid rgba(224, 92, 92, 0.3);
+    color: var(--error);
+}
+
+/* ── Back link ── */
+.back-link {
+    display: inline-block;
+    margin-top: 1.25rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--accent-hover);
+}
+/* ── Light mode ── */
+body.light {
+    --bg:        #f4f4f8;
+    --surface:   #ffffff;
+    --surface-2: #efefef;
+    --border:    #dcdcdc;
+    --text:      #1a1a1a;
+    --text-muted:#666666;
+}
